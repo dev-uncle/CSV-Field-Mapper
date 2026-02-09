@@ -33,7 +33,7 @@
 // I also used tailwindcss for the style
 
 // HOW TO RUN.
-// Make sure you clone the repository from this github link:
+// Make sure you clone the repository from this github link https://github.com/dev-uncle/CSV-Field-Mapper:
 // then open the terminal and download the package needed by typing this command 'npm install'
 // after that you can run the project by typing the 'npm run dev' command
 // or you can visit the deployed version of this

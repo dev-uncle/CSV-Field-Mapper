@@ -1,4 +1,4 @@
-"use client";
+// this is came from AI and also this is my basis only and some logic i get in here
 
 import { useState } from "react";
 import type { ChangeEvent } from "react";

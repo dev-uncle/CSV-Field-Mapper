@@ -1,73 +1,73 @@
-# React + TypeScript + Vite
+CSV Field Mapper
+A frontend application designed to parse CSV files, map columns to system fields, validate data, and submit the transformed data to a REST API.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Objectives
+CSV Parsing: Upload and parse CSV files directly in the frontend to display data in a list format.
 
-Currently, two official plugins are available:
+Field Mapping: Map CSV columns to predefined system fields (name, email, phone, address).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Field Mapping Modal: Utilize a Modal for mapping configuration.
 
-## React Compiler
+API Integration: Submit transformed data via a POST request to a public API (JSONPlaceholder).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Additional Features
+Drag & Drop: Intuitive file upload zone.
 
-## Expanding the ESLint configuration
+UX Feedback: Loading states and submission feedback (success/error).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Validation: Required field check and email format validation.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Tools Used
+React + TypeScript: Frontend framework.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Vite: Build tool for fast initialization.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Tailwind CSS: Styling framework.
+
+How to Run
+Clone the repository:
+
+Bash
+git clone https://github.com/dev-uncle/CSV-Field-Mapper
+cd CSV-Field-Mapper
+Install dependencies:
+
+Bash
+npm install
+Run the development server:
+
+Bash
+npm run dev
+Open your browser and navigate to the URL shown in the terminal (usually http://localhost:5173).
+
+Explanation of Logic
+
+Shutterstock
+
+1. File Handling & Parsing
+   Using the FileReader API, the application reads the uploaded CSV file as raw text. The parseCSV function splits this text using newlines (\r?\n) to separate rows, and commas (,) to separate columns. The first line is treated as headers, and the rest as data rows.
+
+2. Field Mapping (Modal)
+   Once parsed, a MappingModal appears. This component provides dropdown selects to match the CSV columns (headers) to the required system fields (name, email, etc.).
+
+3. Data Transformation & Validation
+   Upon clicking "Map and Preview", the processData function executes:
+
+Required Fields: Checks if Name and Email are mapped.
+
+Email Validation: Uses a regular expression to validate email formats.
+
+```TypeScript
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+If validation fails, an error message is displayed, and data is not processed.
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+4. API Submission
+   Finally, the handleSubmit function sends the mapped data to https://jsonplaceholder.typicode.com/posts using fetch with the POST method. The UI provides feedback on whether the submission was successful or failed.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Developer
+Uncledev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Portfolio: https://uncle-dev.com
+GitHub: https://github.com/dev-uncle
+Email: jhonbrian@uncle-dev.com
