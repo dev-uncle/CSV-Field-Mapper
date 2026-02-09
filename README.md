@@ -1,7 +1,9 @@
-CSV Field Mapper
+## CSV Field Mapper
+
 A frontend application designed to parse CSV files, map columns to system fields, validate data, and submit the transformed data to a REST API.
 
-Objectives
+# Objectives
+
 CSV Parsing: Upload and parse CSV files directly in the frontend to display data in a list format.
 
 Field Mapping: Map CSV columns to predefined system fields (name, email, phone, address).
@@ -10,34 +12,39 @@ Field Mapping Modal: Utilize a Modal for mapping configuration.
 
 API Integration: Submit transformed data via a POST request to a public API (JSONPlaceholder).
 
-Additional Features
-Drag & Drop: Intuitive file upload zone.
+# Additional Features
 
-UX Feedback: Loading states and submission feedback (success/error).
+- Drag & Drop: Intuitive file upload zone.
+- UX Feedback: Loading states and submission feedback (success/error).
+- Validation: Required field check and email format validation.
 
-Validation: Required field check and email format validation.
+# Tools Used
 
-Tools Used
-React + TypeScript: Frontend framework.
+- React + TypeScript: Frontend framework.
+- Vite: Build tool for fast initialization.
+- Tailwind CSS: Styling framework.
 
-Vite: Build tool for fast initialization.
+# How to Run
 
-Tailwind CSS: Styling framework.
+- Clone the repository:
 
-How to Run
-Clone the repository:
-
-Bash
+```Bash
 git clone https://github.com/dev-uncle/CSV-Field-Mapper
 cd CSV-Field-Mapper
+```
+
 Install dependencies:
 
-Bash
+```Bash
 npm install
+```
+
 Run the development server:
 
-Bash
+```Bash
 npm run dev
+```
+
 Open your browser and navigate to the URL shown in the terminal (usually http://localhost:5173).
 
 Explanation of Logic
@@ -65,7 +72,8 @@ If validation fails, an error message is displayed, and data is not processed.
 4. API Submission
    Finally, the handleSubmit function sends the mapped data to https://jsonplaceholder.typicode.com/posts using fetch with the POST method. The UI provides feedback on whether the submission was successful or failed.
 
-Developer
+# Developer
+
 Uncledev
 
 Portfolio: https://uncle-dev.com
