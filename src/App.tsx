@@ -37,6 +37,7 @@
 // then open the terminal and download the package needed by typing this command 'npm install'
 // after that you can run the project by typing the 'npm run dev' command
 // or you can visit the deployed version of this https://csv-field-mapper-71iz.vercel.app/
+// you can also use the test-data.csv file on the root folder of this project
 
 import { useState, type DragEvent } from "react";
 
