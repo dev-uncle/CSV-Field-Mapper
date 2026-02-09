@@ -72,6 +72,10 @@ If validation fails, an error message is displayed, and data is not processed.
 4. API Submission
    Finally, the handleSubmit function sends the mapped data to https://jsonplaceholder.typicode.com/posts using fetch with the POST method. The UI provides feedback on whether the submission was successful or failed.
 
+# LIVE
+
+https://csv-field-mapper-71iz.vercel.app/
+
 ## Developer
 
 Uncledev
